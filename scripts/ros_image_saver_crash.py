@@ -20,7 +20,7 @@ import numpy as np
 
 # Instantiate CvBridge
 bridge = CvBridge()
-i = 10680 # 1
+i = 1 #10680 # 1
 
 def image_callback(msg):
     print("Received an image!")
@@ -35,7 +35,8 @@ def image_callback(msg):
         # Save your OpenCV2 image as a jpeg 
         global i
         cv2.imwrite('camera_image_{}.jpeg'.format(str(i).zfill(5)), cv2_img)
-        i = i - 1  # i+1
+
+        i = i + 1  # i-1
 
 def main():
     rospy.init_node('image_listener')
